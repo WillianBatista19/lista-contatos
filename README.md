@@ -89,4 +89,4 @@ Esse comando executa os testes e gera um relatório de cobertura de código que 
 
 ## Adicionar Novos Testes
 
-Se você adicionar novos arquivos ou componentes ao projeto, não se esqueça de criar testes apropriados para garantir que o código esteja funcionando conforme o esperado. Os testes devem ser colocados na pasta __tests__ ou em arquivos com o sufixo .test.tsx (ou .spec.jsx).
+Se você adicionar novos arquivos ou componentes ao projeto, não se esqueça de criar testes apropriados para garantir que o código esteja funcionando conforme o esperado. Os testes devem ser colocados na pasta __tests__ ou em arquivos com o sufixo .test.tsx (ou .spec.tsx).
