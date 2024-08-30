@@ -1,5 +1,6 @@
-import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useRouter } from 'next/navigation'
+import { useEffect, } from 'react';
+import React from 'react';
 
 const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const router = useRouter();
@@ -15,7 +16,7 @@ const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     return null;
   }
 
-  return <>{children}</>; 
+  return <>{children}</>;
 };
 
 export default PrivateRoute;

@@ -1,7 +1,7 @@
 "use client";
-
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const HomePage = () => {
   const [username, setUsername] = useState('');
@@ -33,6 +33,9 @@ const HomePage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <div className="flex justify-center mb-6">
+        <Image src="/logo.webp" alt="Logo Chat2Desk" width={150} height={100} />
+        </div>
         <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Login</h1>
         <input
           type="text"

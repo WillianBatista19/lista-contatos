@@ -1,24 +1,26 @@
 "use client";
-
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import ContactCardDetail from '../../../components/contactCardDetail';
 
+interface Address {
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
+}
 interface Contact {
   id: number;
   name: string;
   email: string;
   phone: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-  };
+  address: Address;
   website: string;
 }
-
-const ContactDetailPage = ({ params }: { params: { id: string } }) => {
+interface ContactDetailPageProps {
+  params: { id: string };
+}
+const ContactDetailPage: React.FC<ContactDetailPageProps> = ({ params }) => {
   const [contact, setContact] = useState<Contact | null>(null);
   const router = useRouter();
 
@@ -42,31 +44,15 @@ const ContactDetailPage = ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-lg">
-  <div className="flex items-center">
-    <Image
-      src={`https://robohash.org/${contact.id}?size=100x100`}
-      alt={contact.name}
-      width={100}
-      height={100}
-      className="rounded-full border-4 border-blue-500"
-    />
-    <div className="ml-6">
-      <h1 className="text-3xl font-bold text-gray-800">{contact.name}</h1>
-      <p className="text-gray-600">Email: <span className="text-gray-800">{contact.email}</span></p>
-      <p className="text-gray-600">Phone: <span className="text-gray-800">{contact.phone}</span></p>
-      <p className="text-gray-600">Address: <span className="text-gray-800">{`${contact.address.street}, ${contact.address.suite}, ${contact.address.city}, ${contact.address.zipcode}`}</span></p>
-      <p className="text-gray-600">Website: <span className="text-blue-600 underline cursor-pointer">{contact.website}</span></p>
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <ContactCardDetail contact={contact} />
+      <button
+        onClick={() => router.back()}
+        className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition duration-200"
+      >
+        Voltar
+      </button>
     </div>
-  </div>
-  <button
-    onClick={() => router.back()}
-    className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition duration-200"
-  >
-    Voltar
-  </button>
-</div>
-
   );
 };
 
