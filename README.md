@@ -62,6 +62,9 @@ Após instalar as dependências e iniciar o servidor de desenvolvimento, você p
 Configuração de Fontes
 Este projeto utiliza next/font para otimizar e carregar automaticamente a fonte Inter, uma fonte personalizada do Google. Não é necessário configurar manualmente as fontes, pois isso é gerenciado automaticamente pelo Next.js.
 
+## usuário e senha para acesso 
+admin e admin123
+
 ## Executando Testes
 Para garantir que o seu ambiente está configurado corretamente e que todos os testes estão passando, siga estas etapas:
 
